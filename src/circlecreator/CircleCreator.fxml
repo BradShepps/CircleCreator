@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="circlecreator.CircleCreatorController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane fx:id="anchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: rgb(176, 201, 242176, 201, 242);" VBox.vgrow="ALWAYS">
+      <children>
+            <VBox layoutX="217.0" layoutY="21.0" spacing="30.0">
+               <children>
+                  <Text fill="#ff7575" strokeType="OUTSIDE" strokeWidth="0.0" text="Circle Creator 2.0">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <VBox spacing="5.0" style="-fx-border-color: rgb(0, 0,0); -fx-border-width: 2;">
+                     <children>
+                        <Text fill="#ee6161" strokeType="OUTSIDE" strokeWidth="0.0" text="Radius">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="radiusField" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+            <Button fx:id="circleButton" layoutX="445.0" layoutY="106.0" mnemonicParsing="false" onAction="#makeCircle" text="Press to Make Circle">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <VBox layoutX="14.0" layoutY="228.0" spacing="10.0">
+               <children>
+                  <Text fx:id="radiusOutput" fill="#ee6161" strokeType="OUTSIDE" strokeWidth="0.0" text="Radius:">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="diameterOutput" fill="#ee6161" strokeType="OUTSIDE" strokeWidth="0.0" text="Diameter:">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="areaOutput" fill="#ee6161" strokeType="OUTSIDE" strokeWidth="0.0" text="Area:">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="circumferenceOutput" fill="#ee6161" strokeType="OUTSIDE" strokeWidth="0.0" text="Circumference:">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <Text fill="#ff6a6a" layoutX="14.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made With JavaFX" wrappingWidth="184.26074028015137">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Canvas fx:id="canvas" height="178.0" layoutX="213.0" layoutY="172.0" width="200.0" />
+            <ImageView fitHeight="83.0" fitWidth="200.0" layoutX="14.0" layoutY="78.0">
+               <image>
+                  <Image url="@JavaFX_Logo.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="AnchorPane2" layoutX="213.0" layoutY="200.0" prefHeight="161.0" prefWidth="200.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
